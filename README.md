@@ -1,2 +1,2 @@
 # agaza_travel_tours
-web app
+simple web app using html+css+javaScript
