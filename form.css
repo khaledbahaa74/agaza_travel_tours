@@ -1,0 +1,30 @@
+﻿body {
+    background-image: url("form.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+option {
+    background-color: aliceblue;
+    Font-size: x-large;
+    font: 900 bold;
+    Color: indigo;
+}
+
+input {
+    font: 600 bold;
+    font-size: x-large;
+    background-color: aliceblue;
+}
+
+label, h2 {
+    Font-size: xx-large;
+    font: 200 bold;
+    font: bold;
+    Color: darkslateblue;
+}
+
+select {
+    background-color: aliceblue;
+    font-size: x-large;
+}

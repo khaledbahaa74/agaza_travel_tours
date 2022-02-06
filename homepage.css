@@ -1,0 +1,29 @@
+﻿body {
+    background-image: url("admin.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+footer {
+    font-size: xx-large;
+    font: bold;
+    Color: darkslategray;
+}
+
+a {
+    color: firebrick;
+    font-size: x-large;
+    font: bold;
+}
+
+P {
+    Font-size: xx-large;
+    font: 900 bold;
+    Color: maroon;
+}
+
+h2 {
+    font-size: xx-large;
+    font: bold;
+    Color: indigo;
+}

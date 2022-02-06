@@ -1,0 +1,207 @@
+﻿<!DOCKTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="register.css">
+    <title>Agaza Travel Tours"Register Page"</title>
+    <script type="text/javascript">
+        var today = new Date();
+        var d = today.getDate();
+        var m = today.getMonth();
+        var y = today.getFullYear();
+        var usersInfo = [];
+        if (!window.localStorage.length == 0)
+            usersInfo = JSON.parse(localStorage.getItem("global_array"));
+        function Mysubmit() {
+            if (document.getElementById("fname").value == "")
+                alert("Please fill the required data.")
+            else if (document.getElementById("lname").value == "")
+                alert("Please fill the required data.")
+            else if (document.getElementById("E-mail").value == "")
+                alert("Please fill the required data.")
+            else if (!(document.getElementById("male").checked) && !(document.getElementById("male").checked))
+                alert("Please fill the required data.")
+            else if (document.getElementById("day")[0].selected == true)
+                alert("Please fill the required data.")
+            else if (document.getElementById("month")[0].selected == true)
+                alert("Please fill the required data.")
+            else if (document.getElementById("year")[0].selected == true)
+                alert("Please fill the required data.")
+            else if (document.getElementById("Password").value == "")
+                alert("Please fill the required data")
+            else if (document.getElementById("conPassword").value == "")
+                alert("Please fill the required data.")
+            else if (document.getElementById("E-mail").value.indexOf("@") == -1 || document.getElementById("E-mail").value.indexOf(".") == -1)
+                alert("Please Enter valid email, e.g:info@yahoo.com.")
+            else if (document.getElementById("Password").value != document.getElementById("conPassword").value)
+                alert("Passwords didn't match.")
+            else {
+                var found = false;
+                if (!usersInfo.length == 0) {
+                    for (var i = 0; i < usersInfo.length; i++) {
+                        if (document.getElementById("E-mail").value == usersInfo[i]["E-mail"])
+                            found = true;
+                    }
+                }
+                if (found == true)
+                    alert("E-mail already existed.");
+                else {
+                    var admin = false;
+                    if (document.getElementById("E-mail").value == "khaledbahaa117@gmail.com" || document.getElementById("E-mail").value == "mohammed20191700534@gmail.com")
+                        admin = true;
+                    else if (document.getElementById("E-mail").value == "mohammed20191700563@cis.asu.edu" || document.getElementById("E-mail").value == "mohammed20191700547@cis.asu.edu")
+                        admin = true;
+                    else if (document.getElementById("E-mail").value == "mohammed20191700529@cis.asu.edu")
+                        admin = true;
+                    var bithDayMan = false;
+                    if (document.getElementById("day").selectedIndex == d && document.getElementById("month").selectedIndex == m + 1)
+                        bithDayMan = true;
+                    var new_user = {
+                        "First Name": document.getElementById("fname").value,
+                        "Last Name": document.getElementById("lname").value,
+                        "E-mail": document.getElementById("E-mail").value,
+                        "Password": document.getElementById("Password").value,
+                        "BirthDate": {
+                            "Day": document.getElementById("day").value,
+                            "Month": document.getElementById("month").value,
+                            "Year": document.getElementById("year").value
+                        },
+                        "Admin": admin,
+                        "checked": [false, false, false],
+                        "birthday": bithDayMan
+                    }
+                    usersInfo.push(new_user);
+                    alert("registration completed.");
+                    localStorage.setItem("global_array", JSON.stringify(usersInfo));
+                    window.location.href = "login.html"
+                }
+            }
+        }
+        function cancelation() {
+            localStorage.setItem("global_array", JSON.stringify(usersInfo));
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td width="620">
+                <img src="logo1.png" width="250" height="250">
+            </td>
+            <td>
+                <h2>Agaza Travel Tours</h2>
+            </td>
+        </tr>
+    </table>
+    <form>
+        <center>
+
+            <h2>Register </h2><br>
+            <label for="First name:">First name :</label>
+            <input type="text" id="fname" size="20" placeholder="Your name…"><br>
+            <br><label for="Last name">Last name :</label>
+            <input type="text" id="lname" size="20" placeholder="Your last name…"><br>
+            <br><label for="E-mail">E-mail :</label>
+            <input type="email" id="E-mail" size="30" placeholder="@gmail or @cis"><br>
+            <br><label for="Gender:">Gender:</label><br>
+            <input type="radio" id="male" name="gender" value="male">Male <input type="radio" id="female" name="gender" value="female">Female <br>
+            <br> <label for="Birth date:">Birth date:</label><br>
+            <span>
+                <label for="day"></label>
+                <select id="day" name="day">
+                    <option selected>day</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                    <option>21</option>
+                    <option>22</option>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                    <option>27</option>
+                    <option>28</option>
+                    <option>29</option>
+                    <option>30</option>
+                    <option>31</option>
+                </select>
+            </span>
+            <span>
+                <label for="month"></label>
+                <select id="month" name="month">
+                    <option selected>month</option>
+                    <option>January</option>
+                    <option>February</option>
+                    <option>March</option>
+                    <option>April</option>
+                    <option>May</option>
+                    <option>June</option>
+                    <option>July</option>
+                    <option>August</option>
+                    <option>September</option>
+                    <option>October</option>
+                    <option>November</option>
+                    <option>December</option>
+                </select>
+            </span>
+            <span>
+                <label for="year"></label>
+                <select id="year" name="year">
+                    <option selected>year</option>
+                    <option>2007</option>
+                    <option>2006</option>
+                    <option>2005</option>
+                    <option>2004</option>
+                    <option>2003</option>
+                    <option>2002</option>
+                    <option>2001</option>
+                    <option>2000</option>
+                    <option>1999</option>
+                    <option>1998</option>
+                    <option>1997</option>
+                    <option>1996</option>
+                    <option>1995</option>
+                    <option>1994</option>
+                    <option>1993</option>
+                    <option>1992</option>
+                    <option>1991</option>
+                    <option>1990</option>
+                    <option>1989</option>
+                    <option>1988</option>
+                    <option>1987</option>
+                    <option>1986</option>
+                    <option>1985</option>
+                    <option>1984</option>
+                    <option>1983</option>
+                    <option>1982</option>
+                    <option>1981</option>
+                    <option>1980</option>
+                </select>
+            </span><br>
+            <br><label for="Password">Password :</label>
+            <input type="Password" id="Password" size="12" placeholder="Password…"><br>
+            <br><label for="Confirm Password">Confirm Password</label>
+            <input type="Password" id="conPassword" size="12" placeholder="Confirm password…"><br>
+            <br>
+            <br> <input type="button" value="submit" onclick="Mysubmit()"><br>
+            <br> <a href="login.html" onclick="cancelation()">already have an account</a>
+        </center>
+    </form>
+</body>
+</html>

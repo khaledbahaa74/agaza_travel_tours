@@ -1,0 +1,102 @@
+﻿<o!DOCKTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="admin.css">
+    <title>Agaza Travel Tours “Admain Page”</title>
+    <script type="text/javascript">
+        function logOut() {
+            alert("You are logged out.");
+        }
+        function mysubmit() {
+            var fsize1, fsize2, fsize3;
+            var fcolor1, fcolor2, fcolor3;
+            if (document.getElementById("color").value.length > 0 && document.getElementById("color").value.length < 7)
+                alert("Please enter valid hexacode.");
+            else if (document.getElementById("color").value.indexOf("#") > 0)
+                alert("Please enter valid hexacode.");
+            else {
+                alert("Change submitted.");
+                if (document.getElementById("paragraph")[0].selected) {
+                    fcolor1 = document.getElementById("color").value;
+                    fsize1 = document.getElementById("size").value;
+                    localStorage.setItem("fsize1", fsize1);
+                    localStorage.setItem("fcolor1", fcolor1);
+                }
+                else if (document.getElementById("paragraph")[1].selected) {
+                    fcolor2 = document.getElementById("color").value;
+                    fsize2 = document.getElementById("size").value;
+                    localStorage.setItem("fsize2", fsize2);
+                    localStorage.setItem("fcolor2", fcolor2);
+                }
+                else if (document.getElementById("paragraph")[2].selected) {
+                    fcolor3 = document.getElementById("color").value;
+                    fsize3 = document.getElementById("size").value;
+                    localStorage.setItem("fsize3", fsize3);
+                    localStorage.setItem("fcolor3", fcolor3);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <footer align="center">Summer 2020</footer>
+    <table>
+        <tr>
+            <td width="1300">
+                <img src="logo1.png" width="250" height="250">
+            </td>
+            <td width="1800">
+                <h2>Agaza Travel Tours</h2>
+            </td>
+            <td width="400">
+                <a href="login.html" onclick="logOut()">logout</a>
+            </td>
+        </tr>
+    </table>
+    <menu>
+        <a href="homepage.html"> Home </a>
+        <br>
+        <br>
+        <a href="form.html"> Booking </a>
+        <br>
+        <br>
+        <a href="admin.html"> Admin </a>
+        <br>
+        <br>
+        <a href="contact_us.html"> Contact Us </a>
+    </menu>
+    <center>
+        <table>
+            <tr>
+                <td colspan="2" align="center">
+                    <span>
+                        <label for="paragraph"> Paragraph :</label>
+                        <select id="paragraph">
+                            <option selected>Paragraph 1</option>
+                            <option>Paragraph 2</option>
+                            <option>Paragraph 3</option>
+                        </select>
+                        <br>
+                    </span>
+                    <br /><br />
+                    <span>
+                        <label for="size"> Font Size :</label>
+                        <select id="size">
+                            <option selected>30px</option>
+                            <option>40px</option>
+                            <option>50px</option>
+                            <option>60px</option>
+                        </select>
+                        <br>
+                    </span>
+                    <label for="color:">Font Color :</label>
+                    <input type="text" id="color" size="30" placeholder="Enter HexaColorCodes #000000"><br>
+                    <br /><br />
+                    <input type="button" value="Submit" style="background-color:aliceblue;" onclick="mysubmit()" />
+                    <br /><br /><br />
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+</html>

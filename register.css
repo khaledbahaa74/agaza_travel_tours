@@ -1,0 +1,36 @@
+﻿body {
+    background-image: url("register.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+label {
+    Font-size: xx-large;
+    font: 600 bold;
+    Color: maroon;
+}
+
+option {
+    background-color: aliceblue;
+    Font-size: x-large;
+    font: 300 bold;
+    Color: chocolate;
+}
+
+input {
+    font: 200 bold;
+    font-size: x-large;
+    background-color: aliceblue;
+}
+
+label, h2 {
+    Font-size: xx-large;
+    font: 200 bold;
+    font: bold;
+    Color: maroon;
+}
+
+select {
+    background-color: aliceblue;
+    font-size: x-large;
+}

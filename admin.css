@@ -1,0 +1,38 @@
+﻿body {
+    background-image: url("admin.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+footer {
+    font-size: xx-large;
+    font: bold;
+    Color: darkmagenta;
+}
+
+a, mark {
+    color: firebrick;
+    font-size: x-large;
+    font: bold;
+}
+
+P, label {
+    Font-size: xx-large;
+    font: 900 bold;
+    Color: black;
+}
+
+h2 {
+    font-size: xx-large;
+    font: bold;
+    Color: chocolate;
+}
+
+select {
+    background-color: aliceblue;
+    font-size: large;
+}
+
+input {
+    font-size: large;
+}

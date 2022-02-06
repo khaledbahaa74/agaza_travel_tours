@@ -1,0 +1,111 @@
+﻿<!DOCKTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="form.css">
+    <title> Agaza Travel Tours “Booking Page” </title>
+    <script type="text/javascript">
+        var usersInfo = JSON.parse(localStorage.getItem("global_array"));
+        var userIndex = JSON.parse(localStorage.getItem("userIndex"));
+        function submision() {
+            if (document.getElementById("name").value == "")
+                alert("Name is empty")
+            else if (document.getElementById("phnumber").value == "")
+                alert("Phone Number is empty")
+            else if (document.getElementById("trip")[0].selected == true)
+                alert("No trip is chosen")
+            else {
+                for (var i = 1; i < 4; i++) {
+                    if (document.getElementById("trip")[i].selected == true) {
+                        if (usersInfo[userIndex]["checked"][i-1] == true)
+                            alert("User already booked");
+                        else {
+                            usersInfo[userIndex]["checked"][i-1] = true;
+                            localStorage.setItem("global_array", JSON.stringify(usersInfo));
+                            if (usersInfo[userIndex]["birthday"])
+                                alert("Booking completed successfully.\n\nYou are now enjoying your birthday offer In celebration of your presence, 25% has been discounted  🎁 from the price of the flight ticket and Happy birthday to you 🎈🎈🎈");
+                            else
+                                alert("Booking completed successfully.");
+                            window.location.href = "homepage.html";
+                        }
+                    }
+                }
+                
+            }
+        }
+        function cancelation() {
+            window.location.href = "homepage.html";
+        }
+    </script>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td width="600">
+                <img src="logo1.png" width="250" height="250">
+            </td>
+            <td>
+                <h2>Agaza Travel Tours</h2>
+            </td>
+        </tr>
+    </table>
+    <center>
+        <h2>Form</h2><br>
+        <br>
+        <form>
+            <label for="Full Name:">Full Name:</label>
+            <input type="text" id="name" size="30" placeholder="Your Name"><br>
+            <br>
+            <label for="phone:">Phone Number:</label>
+            <span>
+                <select id="cont" name="cont">
+                    <option selected>+20</option>
+                    <option>+966</option>
+                    <option>+1</option>
+                    <option>+49</option>
+                    <option>+33</option>
+                </select>
+            </span>
+            <input type="text" id="phnumber" size="9"><br>
+            <br>
+            <label>Program</label><br>
+            <br>
+            <span>
+                <label for="cont">Trip :</label>
+                <select id="trip">
+                    <option selected>Choose your trip</option>
+                    <option>Matrouh</option>
+                    <option>Hurghada</option>
+                    <option>Sharm El Sheikh</option>
+                </select>
+            </span><br>
+            <br>
+            <label for="phone:">Trip Offers :</label>
+            <br>
+            <input type="checkbox">Boat Tour.
+            <br>
+            <input type="checkbox">Mountain Climbing Tour.
+            <br>
+            <input type="checkbox">Visiting Tourist Places.
+            <br>
+            <input type="checkbox">Underwater Diving Tour.
+            <br><br>
+            <label for="phone:">Hotel offers : </label>
+            <br>
+            <input type="checkbox">Hotels with a Swimming Pool.
+            <br>
+            <input type="checkbox">Luxury Hotels.
+            <br>
+            <input type="checkbox">Self-Catering Accommodation.
+            <br>
+            <input type="checkbox">Hotels with a Jacuzzi and Resorts.
+            <br>
+            <input type="checkbox">Family Hotels.
+            <br>
+            <br>
+            <input type="button" value="Submit" style="background-color:aliceblue;" onclick="submision()">
+            <input type="button" value="Cancel" style="background-color:aliceblue;" onclick="cancelation()">
+        </form>
+    </center>
+</body>
+</html>

@@ -1,0 +1,153 @@
+﻿<!DOCKTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="homepage.css">
+    <title>Agaza Travel Tours “Home Page”</title>
+    <script type="text/javascript">
+        function logOut() {
+            alert("You are logged out.");
+        }
+        var usersInfo = JSON.parse(localStorage.getItem("global_array"));
+        var userIndex = JSON.parse(localStorage.getItem("userIndex"))
+        function admin() {
+            if (usersInfo[userIndex]["Admin"] == false)
+                alert("Only admins can enter this page.")
+            return usersInfo[userIndex]["Admin"]
+        }
+    </script>
+</head>
+<body>
+    <footer align="center">Summer 2020</footer>
+    <table>
+        <tr>
+            <td width="1500">
+                <img src="logo1.png" width="250" height="250">
+            </td>
+            <td width="1800">
+                <h2>Agaza Travel Tours</h2>
+            </td>
+            <td width="400">
+                <a href="login.html" onclick="logOut()">logout</a>
+            </td>
+        </tr>
+    </table>
+    <menu style="width:100px">
+        <p id="name" style="color: firebrick; font: 50 px; font-weight: 300; "></p>
+        <br>
+        <a href="homepage.html"> Home </a>
+        <br>
+        <br>
+        <a href="form.html"> Booking </a>
+        <br>
+        <br>
+        <a href="admin.html" onclick="return admin()"> Admin </a>
+        <br>
+        <br>
+        <a href="contact_us.html"> Contact Us </a>
+    </menu>
+
+
+    <center>
+        <table>
+
+            <tr>
+                <td width="200">
+                </td>
+                <td>
+                    <h2 align="center">
+                        Matrouh Trip
+                    </h2>
+                    <img src="1.jpg" align="right" width="300" height="200">
+                    <p id="parag1">
+                        <strong>Details:</strong> <br> Peace be upon you today, your generation with a Mayfatch offer, 
+                        a summer show, a trip to one of the most beautiful governorates of Egypt, the city of magic and beauty, 
+                        the city of Marsa Matruh. The trip will be 7 days, with 6 nights. Al-Rakhm, which includes the most 
+                        famous beaches, Wonder Beach and White Beach, and also includes some famous tourist resorts such as Blue Beach 
+                        and Hanzur Hammam, the famous Cleopatra bath that tourists from all over the world come to because of the importance 
+                        of tourism and therapeutic in the treatment of some diseases. Which helps to get rid of all the negative 
+                        energies and pressures and of course at a time designated for the descent of the sea and also in a swimming pool 
+                        for the children all of this, but the hotel will be close to the most famous markets in the city, 
+                        price includs transportation and children under 11 years, it is counted as a text a ticket.
+                        <br /><br />
+                        <strong>Price: 2500L.E.</strong>
+                    </p>
+                    <img src="2.jpg" align="left" width="300" height="200">
+                </td>
+            </tr>
+            <tr>
+                <td width="200">
+                </td>
+                <td>
+                    <h2 align="center">
+                        Hurghada
+                    </h2>
+                    <img src="4.jpg" align="right" width="300" height="200">
+                    <p id="parag2">
+                        <strong>Details:</strong> <br> Peace be upon you. The start of the announcement of a trip to the finest beaches of Hurghada. 
+                        The trip consists of 7 days and 6 nights in one of the most luxurious hotels in the city of Hurghada, and it was close to the city 
+                        for the holidays and excursions. This trip starts from the first arrival of the hotel. That return to the hotel, 
+                        and from the second day until the last day of the trip, we will visit some of its landmarks such as the Sand Museum, 
+                        the most famous museums in the world, the Hurghada Water Museum, and the Mini Egypt Museum, which shows all the antiquities 
+                        and heritage of Egypt from Aswan to Alexandria in the form of small sculptures and a famous visit The most beautiful islands in the Red Sea, 
+                        such as Abu Minqar Island and Magawish Island, which is called the Red Sea Committee because of its coral reefs and colorful fish, 
+                        and also on a visit to Makadi Water World, the largest city for water games, as it contains 50 water games and of course 
+                        it will be in a dedicated time For those who want to go to the sea or work tan, price includs transportation, 
+                        breakfast and dinner full board Note: Children under the age of 11 years with half a ticket.
+                        <br /><br />
+                        <strong>Price: 3000L.E.</strong>
+                    </p>
+                    <img src="6.jpg" align="left" width="300" height="200">
+                </td>
+            </tr>
+            <tr>
+                <td width="200"></td>
+                <td>
+                    <h2 align="center">
+                        Sharm El Sheikh
+                    </h2>
+                    <img src="3.jpg" align="right" width="300" height="200">
+                    <p id="parag3">
+                        <strong>Details:</strong><br> Of course, we are all tired of the heat, work, and the stress of life, 
+                        so that they will give you the summer offer of 7 days and 6 nights in the most luxurious 
+                        and best hotels in Sharm El Sheikh, and because of the boredom, he will stay on recreational 
+                        and tourist trips to visit the city's landmarks such as Naama Bay, cafes and restaurants 
+                        there and Mount Moussa is one of the most beautiful and famous mountains in Egypt and 
+                        Mount Saint Catherine where we can climbing , hiking and diving trips to see the coral reefs 
+                        and the beauty and rarest marine creatures in the world and enjoying water games and all water 
+                        games are optional and are not added to the program of the trip and visit the most beautiful 
+                        and famous place in the world which is blue hole, because we are aware of the suffering of people 
+                        in this difficult circumstances, and because the journey with the family, children under the age of ten years, 
+                        must be with a text that is only mentioned, an important note: transportation is free and 
+                        travel is not counted from the days of the journey.
+                        <br /><br />
+                        <strong>Price: 249$</strong>
+                    </p>
+                    <img src="5.jpg" align="left" width="300" height="200">
+                </td>
+            </tr>
+        </table>
+    </center>
+    <script>
+        var greeting = "Welcome " + usersInfo[userIndex]["First Name"]
+        document.getElementById("name").innerHTML = greeting;
+        var fsize1 = localStorage.getItem("fsize1");
+        var fsize2 = localStorage.getItem("fsize2");
+        var fsize3 = localStorage.getItem("fsize3");
+        var fcolor1 = localStorage.getItem("fcolor1");
+        var fcolor2 = localStorage.getItem("fcolor2");
+        var fcolor3 = localStorage.getItem("fcolor3");
+        if (fsize1 != null)
+            document.getElementById("parag1").style.fontSize = fsize1;
+        if (fsize2 != null)
+            document.getElementById("parag2").style.fontSize = fsize2;
+        if (fsize3 != null)
+            document.getElementById("parag3").style.fontSize = fsize3;
+        if (fcolor1 != null && fcolor1.length != 0)
+            document.getElementById("parag1").style.color = fcolor1;
+        if (fcolor2 != null && fcolor1.length != 0)
+            document.getElementById("parag2").style.color = fcolor2;
+        if (fcolor3 != null && fcolor1.length != 0)
+            document.getElementById("parag3").style.color = fcolor3;
+    </script>
+</body>
+</html>

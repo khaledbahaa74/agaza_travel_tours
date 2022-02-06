@@ -1,0 +1,23 @@
+﻿body {
+    background-image: url("login.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h2 {
+    font-size: xx-large;
+    font: 1000 bold;
+    Color: indigo;
+}
+
+label {
+    Font-size: xx-large;
+    font: 600 bold;
+    Color: maroon;
+}
+
+input {
+    Font-size: xx-large;
+    font: 600 bold;
+    Color: black;
+}

@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <title>Agaza Travel Tours “Login Page”</title>
+    <script type="text/javascript">
+        var usersInfo = JSON.parse(localStorage.getItem("global_array"));
+        function validation() {
+            if (document.getElementById("E-mail").value == "")
+                alert("E-mail is empty.")
+            else if (document.getElementById("password").value == "")
+                alert("Password is empty.")
+            else {
+                if (document.getElementById("E-mail").value.indexOf("@") == -1 || document.getElementById("E-mail").value.indexOf(".") == -1)
+                    alert("Please Enter valid email, e.g:info@yahoo.com.")
+                else {
+                    var found = false;
+                    var index;
+                    if (usersInfo != null) {
+                        for (var i = 0; i < usersInfo.length; i++) {
+                            if (document.getElementById("E-mail").value == usersInfo[i]["E-mail"] && document.getElementById("password").value == usersInfo[i]["Password"]) {
+                                found = true;
+                                index = i;
+                            }
+                        }
+                    }
+                    if (found == false)
+                        alert("Wrong E-mail or Password.");
+                    else {
+                        localStorage.setItem("userIndex", JSON.stringify(index));
+                        window.location.href = "homepage.html"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td width="620">
+                <img src="logo1.png" width="250" height="250">
+            </td>
+            <td>
+                <h2>Agaza Travel Tours</h2>
+            </td>
+        </tr>
+    </table>
+    <center>
+        <h2>Login</h2>
+        <br>
+        <form>
+            <label for="E-mail:">E-mail:</label>
+            <input type="text" id="E-mail" size="20" placeholder="……@gmail or @cis"><br><br>
+            <label for="passward:">password :</label>
+            <input type="password" id="password" size="17" placeholder="Enter your password"><br><br>
+            <input type="button" value="LogIn" onclick="validation()"><br><br>
+            <a href="register.html"> Register </a>
+        </form>
+    </center>
+</body>
+</html>

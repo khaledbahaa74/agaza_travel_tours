@@ -1,0 +1,83 @@
+﻿<!DOCKTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="contact_us.css">
+    <title>Agaza Travel Tours “Contact Us Page”</title>
+    <script type="text/javascript">
+        function logOut() {
+            alert("You are logged out.");
+        }
+        var usersInfo = JSON.parse(localStorage.getItem("global_array"));
+        var userIndex = JSON.parse(localStorage.getItem("userIndex"))
+        function admin() {
+            if (usersInfo[userIndex]["Admin"] == false)
+                alert("Only admins can enter this page.")
+            return usersInfo[userIndex]["Admin"]
+        }
+    </script>
+</head>
+<body>
+    <footer align="center">Summer 2020</footer>
+    <table>
+        <tr>
+            <td width="1350">
+                <img src="logo1.png" width="200" height="200">
+            </td>
+            <td width="1800">
+                <h3>Agaza Travel Tours</h3>
+            </td>
+            <td width="400">
+                <a href="login.html" onclick="logOut()">logout</a>
+            </td>
+        </tr>
+    </table>
+    <menu>
+        <a href="homepage.html"> Home </a>
+        <br>
+        <br>
+        <a href="form.html"> Booking </a>
+        <br>
+        <br>
+        <a href="admin.html" onclick="return admin()"> Admin </a>
+        <br>
+        <br>
+        <a href="contact_us.html"> Contact Us </a>
+    </menu>
+
+    <center>
+        <table width="1000" height="650" Text-align: center;>
+            <tr>
+                <td>
+                    <h4>* Agaza Travel Tours Company : </h4>
+                    <h1>
+                        To provide all tourism and travel services to all clients of travel agencies, tour operators and individuals all over the world who wish to visit Egypt and many countries and tourist destinations, whether they are groups, families or individuals, in a distinctly competitive manner … that fits all requirements  By type and price, through a staff composed of a young, educated group with high experience, qualified and ready to provide all kinds of tourism and travel services, and the constant pursuit of providing high-quality tourism services and products that contribute to the development of tourism in our country and meet the needs of both  Clients, friends, tourists and guests.
+                    </h1>
+                    <h4>*Who we :</h4>
+                    <h1>
+                        Are Since 2014 we have been working in the Egyptian market, organizing tourist trips and receiving delegations and individuals from all over the world.  We excel in the world of trips by treating each customer according to his desires and preferences, and at the same time we are keen to provide the cheapest travel price.
+                        We offer you accommodation, transfers, visits, flights, hotels, resorts, domestic trips, train reservations and one-day tours reviews.  Taking advantage of the distinguished geographical situation of Egypt, our company also offers tours in Europe and America.  All you have to do is contact us and put your dreams in our hands.
+                    </h1>
+                    <h4>*Private Trips :</h4>
+                    <h1>
+                        For families, businessmen, newlyweds and everyone who wishes to journey their dreams is not restricted to pre-set programs, we have a team of experts in the fence  Interior and exterior in Egypt can design your dream trip.
+                    </h1>
+                    <h4>*Reservations :</h4>
+                    <h1>
+                        Belong to the two companies of the international organization IATA, and therefore it is ready to make all reservations for flights, ships, trains, cars and hotels at the best prices.  Our company is also connected electronically, via ElaxM technology, to dozens of reservation companies in the world, so that we offer you the best price always available.
+                    </h1>
+                    <h2>Address:    81 Gesr El Suez Street, Roxy Heliopolis.</h2>
+                    <h2>Tel:   22566747 / 85427542 / 64215762 / 94123145 / 45217985 (15 lines)</h2>
+                    <h2>Fax:   22592924</h2>
+                    <h2>E-mail:    info@agazatravel.com </h2>
+                </td>
+
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <h2 align="center">2020</h2>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+</html>
